@@ -76,6 +76,7 @@ enum class ClPlatformTypeEnum
 {
     Unknown,
     Amd,
+    Arm,
     Clover,
     Nvidia,
     Intel
