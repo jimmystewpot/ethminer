@@ -20,6 +20,7 @@
 #define OPENCL_PLATFORM_CLOVER  2
 #define OPENCL_PLATFORM_NVIDIA  3
 #define OPENCL_PLATFORM_INTEL   4
+#define OPENCL_PLATFORM_ARM     5
 
 #if (defined(__Tahiti__) || defined(__Pitcairn__) || defined(__Capeverde__) || defined(__Oland__) || defined(__Hainan__))
 #define LEGACY
