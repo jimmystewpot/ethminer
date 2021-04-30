@@ -14,7 +14,7 @@ if(MSVC)
 endif()
 
 hunter_add_package(CLI11)
-find_package(CLI11 1.9.1 CONFIG REQUIRED)
+find_package(CLI11 CONFIG REQUIRED)
 
 target_link_libraries(ethminer PRIVATE ethcore poolprotocols devcore ethminer-buildinfo CLI11::CLI11 Boost::system Boost::thread)
 

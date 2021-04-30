@@ -26,6 +26,7 @@ else()
 		list(APPEND CUDA_NVCC_FLAGS "-gencode arch=compute_70,code=sm_70")
 	endif()
 	if(NOT CUDA_VERSION VERSION_LESS 10.0)
+		# 72 is used by the Xavier AGX and other ARM based nVidia SOC's
 		list(APPEND CUDA_NVCC_FLAGS "-gencode arch=compute_72,code=sm_72")
 		list(APPEND CUDA_NVCC_FLAGS "-gencode arch=compute_75,code=sm_75")
 	endif()
