@@ -52,11 +52,11 @@ before_install:
       pip install --user requests gitpython
       which cmake
       if [ "$CUDA_VERSION" = "8" ]; then
-        sudo apt-get -qy install g++-5 opencl-c-headers
+        sudo apt-get -qy install g++-5 opencl-c-headers libgl-dev
         export CC=gcc-5
         export CXX=g++-5
       else
-        sudo apt-get -qy install g++-9 opencl-c-headers
+        sudo apt-get -qy install g++-9 opencl-c-headers libgl-dev
         export CC=gcc-9
         export CXX=g++-9
       fi
