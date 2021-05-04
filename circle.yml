@@ -4,7 +4,8 @@ jobs:
     docker:
       - image: nvidia/cuda:9.2-devel-ubuntu18.04
     steps:
-      - run: apt-get update && apt-get install -qy git cmake mesa-common-dev libidn11-dev python3-requests python3-git
+      - run: apt-get update && apt-get install -qy git mesa-common-dev libidn11-dev python3-requests python3-git
+      - run: snap install --channel=3.20/stable --classic
 
       - checkout
       - run: git submodule update --init --recursive
