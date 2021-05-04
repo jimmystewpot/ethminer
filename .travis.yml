@@ -52,11 +52,11 @@ before_install:
       pip install --user requests gitpython
       which cmake
       if [ "$CUDA_VERSION" = "8" ]; then
-        sudo apt-get -qy install g++-5
+        sudo apt-get -qy install g++-5 opencl-c-headers
         export CC=gcc-5
         export CXX=g++-5
       else
-        sudo apt-get -qy install g++-9
+        sudo apt-get -qy install g++-9 opencl-c-headers
         export CC=gcc-9
         export CXX=g++-9
       fi
@@ -71,7 +71,8 @@ before_install:
         echo "Brew Failed"
         exit $BREW_STATUS
       fi
-      HOMEBREW_NO_AUTO_UPDATE=1 brew install -q python3 cmake
+      HOMEBREW_NO_AUTO_UPDATE=1 brew install -q python3 cmake@3.20.2
+      PATH=/usr/local/Cellar/cmake/3.20.2/bin/:$PATH
       pip3 install -q requests gitpython
     fi
 script: |
