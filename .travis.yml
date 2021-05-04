@@ -50,6 +50,7 @@ before_install:
       . scripts/install-cuda-ubuntu1604.sh $CUDA_VERSION
       pyenv global 3.6
       pip install --user requests gitpython
+      which cmake
       if [ "$CUDA_VERSION" = "8" ]; then
         sudo apt-get -qy install g++-5
         export CC=gcc-5
