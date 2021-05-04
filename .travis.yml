@@ -46,6 +46,7 @@ before_install:
       sudo apt-get -q update
       sudo apt-get -y remove cmake
       sudo snap install cmake --channel=3.20/stable --classic
+      PATH=$PATH:/snap/bin/:
       . scripts/install-cuda-ubuntu1604.sh $CUDA_VERSION
       pyenv global 3.6
       pip install --user requests gitpython
