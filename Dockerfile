@@ -2,9 +2,6 @@ FROM ubuntu:20.04
 
 ENV TZ=UTC
 ARG DEBIAN_FRONTEND=noninteractive
-ARG CC=/usr/bin/gcc-10
-ARG CXX=/usr/bin/g++-10
-
 
 RUN apt update && \
     apt -y upgrade && \
@@ -15,7 +12,7 @@ RUN apt update && \
     apt-key add /tmp/nvidia.pub && \
     add-apt-repository "deb https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/ /" && \
     apt update && \
-    apt -y install cuda gcc-10 && \
+    apt -y install cuda gcc-10 g++-10 && \
     apt autoclean && \
     apt -y autoremove
 
