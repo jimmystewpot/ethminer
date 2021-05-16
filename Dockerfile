@@ -2,6 +2,9 @@ FROM ubuntu:20.04
 
 ENV TZ=UTC
 ARG DEBIAN_FRONTEND=noninteractive
+ARG CC=/usr/bin/gcc-10
+ARG CXX=/usr/bin/g++-10
+
 
 RUN apt update && \
     apt -y upgrade && \
@@ -24,3 +27,5 @@ RUN git clone https://github.com/jimmystewpot/ethminer.git /usr/src/ethminer && 
     cmake -DETHASHCL=OFF -DETHASHCUDA=ON -DAPICORE=ON -DBINKERN=ON -DETHASHCPU=ON -DHUNTER_JOBS_NUMBER=4 .. && \
     cmake --build . && \
     make install
+
+ENTRYPOINT [ "/usr/local/bin/ethminer", "-U", "-P", "stratumss://${WALLET_ADDRESS}.${WORKER_NAME}@eu1.ethermine.org:5555", "--api-bind", "127.0.0.1:8080", "--api-password", "EthMiner", "--noeval", "-v", "2", "-R"]
