@@ -5,8 +5,8 @@ ASFLAGS=-I$(SDIR)
 AS=clrxasm
 
 .PHONY: all
-all: ellesmere tonga baffin gfx900 gfx901 gfx902 gfx906
-	@echo "Built ethash kernel for Ellesmere, Tonga, Baffin, Gfx900 Gfx901 Gfx902 and Gfx906 architectures."
+all: ellesmere tonga baffin gfx900 gfx901 gfx902 gfx906 gfx908
+	@echo "Built ethash kernel for Ellesmere, Tonga, Baffin, Gfx900 Gfx901 Gfx902 Gfx906 and Gfx908 architectures."
 
 .PHONY: clean
 clean:
@@ -45,3 +45,7 @@ gfx902: gfx902_lws64.bin gfx902_lws128.bin gfx902_lws256.bin
 .PHONY: gfx906
 gfx906: gfx906_lws64.bin gfx906_lws128.bin gfx906_lws256.bin
 		@echo "Built gfx906 kernels..."
+
+.PHONY: gfx908
+gfx908: gfx908_lws64.bin gfx908_lws128.bin gfx908_lws256.bin
+		@echo "Built gfx908 kernels..."
